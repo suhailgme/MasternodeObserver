@@ -53,6 +53,13 @@ const getLatestBlockHash = async () => {
     }catch (e){console.error(e)}
 }
 
+const getMasternodes = async () => {
+    try{
+    let masternodeList = await client.command('listmasternodes')
+    console.log("getMasternodes: ", await JSON.stringify(masternodeList, null, 1)); 
+    }catch (e){console.error(e)}
+}
+
 
 (async () =>{
     // getLatestBlockHash()
@@ -61,7 +68,8 @@ const getLatestBlockHash = async () => {
     // // getTransactionInfo("3ce1ca2fc78bc9d18af1fb10b2fd0b55c6280beb7803528cf43ee3c754e546cd")
     // let latestBlock = await getLatestBlockHash()
     // console.log(await latestBlock)
-    getBlockInfo(await getLatestBlockHash().tx)
+    // getBlockInfo(await getLatestBlockHash().tx)
+    getMasternodes();
 })()
 
 
