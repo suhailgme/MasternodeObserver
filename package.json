@@ -1,0 +1,19 @@
+{
+  "name": "masternodeobserver",
+  "version": "1.0.0",
+  "description": "Masternode monitoring and statistics",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cryptocurrency",
+    "masternode"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bitcoin": "^3.0.1",
+    "bitcoin-core": "^2.0.0"
+  }
+}
