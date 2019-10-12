@@ -1,5 +1,8 @@
 // @ts-check
 const Client = require('bitcoin-core');
+
+// client port is required for connecting to daemon (daemon must be running in background for localhost connection). 
+// port 51473 is for "Apollon" (XAP) Masternode coin.
 const client = new Client({
     headers: true,
     host: 'localhost',
@@ -12,7 +15,7 @@ const client = new Client({
 //     try{
 //         let request = `${method}(${params})`
 //         console.log(request)
-//         let response = await client.request //request is string have to figure out how to pass as function.
+//         let response = await client.request 
 //         console.log(`${method}: `, await response[0])
 //     }catch(error){console.error(error)}
 // }
@@ -96,68 +99,7 @@ const getBlockCount = async () => {
     }
 }
 
-//Private method to process raw blocks. Returns block object.
-// const _processBlock = async block => {
-//     console.log("Processing block: ", i)
-//     return {
-//         hash: blockHash,
-//         prevBlockHash: block.previousblockhash,
-//         nextBlockHash: block.nextblockhash,
-//         blockHeight: block.height,
-//         size: block.size,
-//         tx: block.tx,
-//         txCount: block.tx.length,
-//         time: block.time,
-//         moneySupply: block.moneysupply,
-//         chainwork: block.chainwork,
-//         merkleRoot: block.merkleroot,
-//         version: block.version,
-//         bits: block.bits,
-//         nonce: block.nonce,
-//         transactions: block.tx
-//     }
-// }
 
-// const getTransactions = async block => {
-//     let transactions = []
-//     for (let transaction in block.tx) {
-//         let transactionInfo = await getTransactionInfo(block.tx[transaction]);
-//         // console.log(JSON.stringify(transactionInfo, null, 1));
-//         transactions.push({
-//             txid: transactionInfo.txid,
-//             vin: transactionInfo.vin,
-//             vout: transactionInfo.vout,
-//             blockHash: transactionInfo.blockhash,
-//             time: transactionInfo.time,
-//             blockTime: transactionInfo.blocktime
-//         });
-//     }
-// }
-
-
-
-(async () => {
-    // let blockInfo = await getBlockInfo(3000)
-    // console.log("block: ", JSON.stringify(blockInfo, null, 1))
-    // let transaction = await getTransactionInfo('9c5d27b83428a8836aa92617bc314e466b63fb012132a1369e6ebd559cc14b6e')
-    // console.log(JSON.stringify(transaction, null, 1))
-
-    // console.log(JSON.stringify(blockchain, null, 1))
-    // let BlockInfo = getBlockInfo('0000049c01ca3f63644a04405e894a8d98d66c2fb75f955056c1a0bcb7ba35f4')
-    // console.log(await BlockInfo)
-
-    // let blockNum = await getBlockHash(0);
-    // console.log(await blockNum)
-    // getLatestBlockHash()
-    // let block1 =await getBlockHash(35505)
-    // getBlockInfo(block1);
-    // // getTransactionInfo("3ce1ca2fc78bc9d18af1fb10b2fd0b55c6280beb7803528cf43ee3c754e546cd")
-    // let latestBlock = await getLatestBlockHash()
-    // console.log(await latestBlock)
-    //     getBlockInfo(await getLatestBlockHash())
-    // getMasternodes();
-    // getTransactionInfo('0f4f413942eea5246fd6b4cb9fe59cee04365f6c24c6b757bc2cebc0ac028320')
-})()
 module.exports = {
     getBlock: getBlock,
     getBlockInfo: getBlockInfo,
