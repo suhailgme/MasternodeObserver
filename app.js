@@ -60,7 +60,7 @@ const getTransactionInfo = async txId => {
     }
 }
 
-//get block information from block height to block height. Returns array of blocks.
+//get block information from block height.
 const getBlockInfo = async blockHeight => {
     console.log("Getting block: ", blockHeight);
     let blockHash = await getBlockHash(blockHeight)
@@ -99,10 +99,7 @@ const getBlockCount = async () => {
     }
 }
 
-const getMaxBlockHeight = async () =>{
-  let lastId = await knex('blocks').max('blockHeight')
-  return lastId[0]['max(`blockHeight`)']
-}
+
 
 
 module.exports = {
@@ -114,5 +111,4 @@ module.exports = {
     getTransactionInfo: getTransactionInfo,
     getMasternodes: getMasternodes,
     getBlockCount: getBlockCount,
-	getMaxBlockHeight: getMaxBlockHeight
 }

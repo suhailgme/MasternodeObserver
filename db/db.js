@@ -125,6 +125,11 @@ const addTransaction = async transaction => {
   }
 }
 
+const getMaxBlockHeight = async () =>{
+  let lastId = await knex('blocks').max('blockHeight')
+  return lastId[0]['max(`blockHeight`)']
+}
+
 
 
 // (async () => {

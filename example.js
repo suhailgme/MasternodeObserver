@@ -7,8 +7,8 @@ const explorer = require('./app');
 // Send message to console when process has finished.
 (async () => {
     try {
-        let blockCount = await explorer.getBlockCount() //or await explorer.getMaxBlockHeight() - 20 for last 20 blocks.
-        let firstBlock = await explorer.getMaxBlockHeight()
+        let blockCount = await explorer.getBlockCount() //Set to 20 to sync first 20 blocks or explorer.getLatestBlock() - 20 to sync last 20
+        let firstBlock = await db.getMaxBlockHeight() // Retrives latest blockheight synced in DB (i.e. not from blockchain) in case of interruption while syncing. 
         for (let i = firstBlock; i < blockCount; i++) {
             let block = await explorer.getBlockInfo(i)
             await db.addBlock(block)
