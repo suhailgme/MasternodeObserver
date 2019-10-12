@@ -5,6 +5,8 @@ Parses a blockchain via the coind* daemon JSON-RPC interface. Extracts all reque
 #### Usage
 An example of the app's usage is provided in "example.js".
 
+A coind* daemon must be running in the background for localhost access. If remote server is used, client information can be changed in "app.js". The appropriate port for the specific coind* daemon must also be set in "app.js"
+
 #### Data Stored in Database (SQLite)
 ##### Sample database provided (/db/db.sqlite) for more information on DB tables and their columns
 * All addresses seen on blockchain 
