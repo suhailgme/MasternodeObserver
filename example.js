@@ -1,7 +1,10 @@
 //@ts-check
-const db = require('./db');
-const explorer = require('../app');
+const db = require('../db');
+const explorer = require('./app');
 
+// Retrieve blockchain's blockheight and start from the first block. 
+// Add each transaction and block to SQLite DB.
+// Send message to console when process has finished.
 (async () => {
     try {
         let blockCount = await explorer.getBlockCount()
