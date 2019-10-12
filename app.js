@@ -99,6 +99,11 @@ const getBlockCount = async () => {
     }
 }
 
+const getMaxBlockHeight = async () =>{
+  let lastId = await knex('blocks').max('blockHeight')
+  return lastId[0]['max(`blockHeight`)']
+}
+
 
 module.exports = {
     getBlock: getBlock,
@@ -108,5 +113,6 @@ module.exports = {
     getLatestBlock: getLatestBlock,
     getTransactionInfo: getTransactionInfo,
     getMasternodes: getMasternodes,
-    getBlockCount: getBlockCount
+    getBlockCount: getBlockCount,
+	getMaxBlockHeight: getMaxBlockHeight
 }
