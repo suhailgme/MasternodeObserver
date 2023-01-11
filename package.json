@@ -15,7 +15,7 @@
   "dependencies": {
     "bitcoin": "^3.0.1",
     "bitcoin-core": "^2.0.0",
-    "knex": "^0.15.2",
+    "knex": "^2.4.0",
     "mongoose": "^5.2.5",
     "sqlite3": "^4.0.2"
   }
